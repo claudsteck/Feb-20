@@ -11,15 +11,17 @@
 
   <body>
     <p>
+    <% user =User.find_by ({"id" => cookies["user_id"]}) %>
       <!-- if no user logged-in, display signup and login links -->
-      <!-- else, if user logged-in, display user name and logout link -->
+ 
       <a href="/users/new">Sign Up</a>
       |
       <a href="/login">Login</a>
       |
       <a href="/logout">Logout</a>
     </p>
-
+     <!-- else, if user logged-in, display user name and logout link -->
+     <a href="/logout">Logout</a>
     <p>
       <%= flash["notice"] %>
     </p>
